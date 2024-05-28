@@ -85,7 +85,11 @@ public class CampusService {
                     return residents.stream()
                             .map(resident -> {
                                 Student student = resident.getStudent();
-                                return student.getFirstName() + " " + student.getLastName();
+                                return student.getLastName() + " "
+                                        + student.getFirstName() + " "
+                                        + student.getPatronymic() + ", "
+                                        + "Факультет " + student.getFaculty() + ", "
+                                        + "Группа " + student.getStudyGroup();
                             })
                             .collect(Collectors.joining("\n"));
                 }
